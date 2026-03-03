@@ -1,90 +1,112 @@
 import { motion } from "framer-motion";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-grid-pattern">
-      {/* Floating decorative elements */}
-      <div className="absolute left-[10%] top-[30%] animate-float opacity-20">
-        <svg width="120" height="140" viewBox="0 0 120 140" fill="none">
-          <path d="M60 10C60 10 20 50 20 80C20 110 40 130 60 130C80 130 100 110 100 80C100 50 60 10 60 10Z" stroke="hsl(0 0% 30%)" strokeWidth="2"/>
-          <path d="M40 60L60 40L80 60" stroke="hsl(0 0% 30%)" strokeWidth="2"/>
-          <circle cx="50" cy="55" r="4" fill="hsl(0 0% 30%)"/>
-          <circle cx="70" cy="55" r="4" fill="hsl(0 0% 30%)"/>
-        </svg>
-      </div>
-      <div className="absolute right-[10%] top-[25%] animate-float-delayed opacity-20">
-        <svg width="140" height="140" viewBox="0 0 140 140" fill="none">
-          <path d="M70 130C70 130 10 90 10 55C10 25 35 5 70 40C105 5 130 25 130 55C130 90 70 130 70 130Z" stroke="hsl(0 0% 40%)" strokeWidth="1.5" strokeDasharray="4 4"/>
-          <circle cx="15" cy="55" r="3" fill="hsl(0 70% 50%)"/>
-          <circle cx="125" cy="55" r="3" fill="hsl(0 70% 50%)"/>
-          <circle cx="70" cy="38" r="3" fill="hsl(0 70% 50%)"/>
-          <circle cx="70" cy="125" r="3" fill="hsl(0 70% 50%)"/>
-        </svg>
+    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-noise">
+      {/* Orbital rings */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="w-[600px] h-[600px] rounded-full border border-border/30 animate-spin-slow" />
+        <div className="absolute w-[450px] h-[450px] rounded-full border border-border/20 animate-spin-slow" style={{ animationDirection: "reverse", animationDuration: "30s" }} />
+        <div className="absolute w-[300px] h-[300px] rounded-full border border-primary/10" />
       </div>
 
-      {/* Dot grid accents */}
-      <div className="absolute left-[5%] top-[40%] grid grid-cols-3 gap-3 opacity-15">
-        {Array.from({ length: 9 }).map((_, i) => (
-          <div key={i} className="w-1.5 h-1.5 rounded-full bg-foreground" />
-        ))}
-      </div>
-      <div className="absolute right-[5%] bottom-[35%] grid grid-cols-3 gap-3 opacity-15">
-        {Array.from({ length: 9 }).map((_, i) => (
-          <div key={i} className="w-1.5 h-1.5 rounded-full bg-foreground" />
-        ))}
-      </div>
+      {/* Accent dots */}
+      <div className="absolute top-[20%] left-[15%] w-2 h-2 rounded-full bg-primary/60 animate-float" />
+      <div className="absolute top-[30%] right-[20%] w-1.5 h-1.5 rounded-full bg-accent/50 animate-float-delayed" />
+      <div className="absolute bottom-[30%] left-[25%] w-1 h-1 rounded-full bg-primary/40 animate-float" />
 
-      {/* Badge */}
+      {/* Status pill */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-        className="glass-card rounded-full px-6 py-3 mb-8 flex items-center gap-3"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="glass-card border-glow rounded-full px-5 py-2.5 mb-10 flex items-center gap-2.5"
       >
-        <span className="text-2xl">👋</span>
-        <span className="text-sm text-muted-foreground font-medium">Hello! I'm a Video Editor!</span>
+        <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+        <span className="text-sm text-muted-foreground font-medium">Available for projects</span>
       </motion.div>
 
-      {/* Title */}
-      <motion.h1
-        initial={{ opacity: 0, y: 30 }}
+      {/* Main heading */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.5 }}
-        className="text-5xl md:text-7xl font-bold text-center mb-4"
+        transition={{ duration: 0.7, delay: 0.4 }}
+        className="text-center z-10 relative"
       >
-        Yo! <span className="text-gradient-accent">I'm Flownex</span>
-      </motion.h1>
+        <h1 className="text-6xl md:text-8xl font-extrabold tracking-tight mb-2">
+          <span className="text-gradient-brand">Flownex</span>
+        </h1>
+        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-2">
+          Media
+        </h1>
+      </motion.div>
 
-      <motion.h2
+      <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.7 }}
-        className="text-3xl md:text-5xl font-bold text-center mb-6 text-foreground"
+        className="flex items-center gap-3 mt-4 mb-6"
       >
-        Professional Video Editor &<br />Motion Designer
-      </motion.h2>
+        <div className="h-px w-12 bg-border" />
+        <span className="text-sm text-muted-foreground font-medium tracking-widest uppercase">Video Editing · Motion Design · Content</span>
+        <div className="h-px w-12 bg-border" />
+      </motion.div>
 
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.9 }}
-        className="text-muted-foreground text-center max-w-xl mb-10 text-lg font-body"
+        className="text-muted-foreground text-center max-w-md mb-12 text-lg leading-relaxed"
       >
-        I edit videos with purpose — helping creators and brands turn ideas into engaging, high-performing content.
+        We craft scroll-stopping videos that grow your audience and turn viewers into fans.
       </motion.p>
 
-      {/* CTA Button */}
-      <motion.a
-        href="#work"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
+      {/* CTA row */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 1.1 }}
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.97 }}
-        className="bg-gradient-cta text-primary-foreground px-16 py-4 rounded-xl text-lg font-semibold glow-primary animate-pulse-glow transition-all"
+        className="flex items-center gap-4"
       >
-        Book a call!
-      </motion.a>
+        <motion.a
+          href="#work"
+          whileHover={{ scale: 1.04 }}
+          whileTap={{ scale: 0.97 }}
+          className="bg-gradient-cta text-primary-foreground px-8 py-4 rounded-full text-base font-semibold flex items-center gap-2 glow-primary"
+        >
+          See Our Work
+          <ArrowRight className="w-4 h-4" />
+        </motion.a>
+        <motion.a
+          href="#about"
+          whileHover={{ scale: 1.04 }}
+          whileTap={{ scale: 0.97 }}
+          className="glass-card border-glow px-8 py-4 rounded-full text-base font-semibold flex items-center gap-2 text-foreground"
+        >
+          <Sparkles className="w-4 h-4 text-accent" />
+          Book a Call
+        </motion.a>
+      </motion.div>
+
+      {/* Stats bar */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 1.4 }}
+        className="mt-20 flex items-center gap-10 md:gap-16"
+      >
+        {[
+          { num: "50+", label: "Projects Delivered" },
+          { num: "30+", label: "Happy Clients" },
+          { num: "2M+", label: "Views Generated" },
+        ].map((stat, i) => (
+          <div key={i} className="text-center">
+            <p className="text-2xl md:text-3xl font-extrabold text-gradient-brand">{stat.num}</p>
+            <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
+          </div>
+        ))}
+      </motion.div>
     </section>
   );
 };

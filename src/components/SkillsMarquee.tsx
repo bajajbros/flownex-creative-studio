@@ -5,38 +5,48 @@ const skills = [
   "Illustrator", "Figma", "Blender", "Cinema 4D", "CapCut",
 ];
 
+const colors = ["165", "200", "35", "280", "150", "340", "60", "220", "100"];
+
 const SkillsMarquee = () => {
   return (
-    <section className="py-24 px-6 overflow-hidden">
+    <section className="py-28 px-6 overflow-hidden bg-noise">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">My Skills and Software I Use</h2>
-          <p className="text-muted-foreground text-lg font-body">Look at my skills I offer and the software I use</p>
+          <p className="text-primary text-sm font-semibold uppercase tracking-widest mb-3">Toolkit</p>
+          <h2 className="text-4xl md:text-5xl font-extrabold">Software We Master</h2>
         </motion.div>
       </div>
 
-      {/* Marquee row */}
-      <div className="w-full overflow-hidden">
-        <div className="flex animate-marquee-slow" style={{ width: "200%" }}>
-          {[...skills, ...skills, ...skills, ...skills].map((skill, i) => (
-            <div
-              key={i}
-              className="flex-shrink-0 mx-3 px-8 py-4 glass-card rounded-2xl flex items-center justify-center"
-            >
-              <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center mr-3">
-                <span className="text-primary font-bold text-xs">
+      <div className="relative">
+        <div className="absolute left-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-r from-background to-transparent" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-l from-background to-transparent" />
+
+        <div className="w-full overflow-hidden">
+          <div className="flex animate-marquee-slow" style={{ width: "200%" }}>
+            {[...skills, ...skills, ...skills, ...skills].map((skill, i) => (
+              <div
+                key={i}
+                className="flex-shrink-0 mx-2 px-6 py-4 rounded-2xl flex items-center gap-3 glass-card hover:border-glow transition-colors"
+              >
+                <div
+                  className="w-9 h-9 rounded-lg flex items-center justify-center text-xs font-bold"
+                  style={{
+                    backgroundColor: `hsl(${colors[i % colors.length]} 50% 40% / 0.2)`,
+                    color: `hsl(${colors[i % colors.length]} 60% 55%)`,
+                  }}
+                >
                   {skill.split(" ").map(w => w[0]).join("")}
-                </span>
+                </div>
+                <span className="text-sm font-medium whitespace-nowrap">{skill}</span>
               </div>
-              <span className="text-sm font-medium whitespace-nowrap">{skill}</span>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
