@@ -11,7 +11,7 @@ const Footer = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-primary text-xs md:text-sm font-semibold uppercase tracking-[0.25em] mb-4 md:mb-6"
+          className="text-primary text-xs md:text-sm font-bold uppercase tracking-[0.3em] mb-4 md:mb-6"
         >
           Ready?
         </motion.p>
@@ -20,10 +20,10 @@ const Footer = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-5xl lg:text-7xl font-extrabold tracking-tight mb-5 md:mb-6"
+          className="font-heading text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-5 md:mb-6"
         >
           Let's Create<br />
-          <span className="text-gradient-brand italic font-light">Something Epic</span>
+          <span className="text-gradient-brand">Something Epic</span>
         </motion.h2>
 
         <motion.p
@@ -31,7 +31,7 @@ const Footer = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="text-muted-foreground text-sm md:text-lg mb-8 md:mb-10 max-w-md mx-auto"
+          className="text-muted-foreground text-sm md:text-base mb-8 md:mb-10 max-w-md mx-auto leading-relaxed"
         >
           Ready to transform your content? Drop us a message and let's get rolling.
         </motion.p>
@@ -43,7 +43,7 @@ const Footer = () => {
           viewport={{ once: true }}
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.97 }}
-          className="inline-flex items-center gap-2 bg-gradient-cta text-primary-foreground px-8 md:px-10 py-3.5 md:py-4 rounded-full text-sm md:text-base font-semibold glow-primary mb-12 md:mb-14"
+          className="inline-flex items-center gap-2 bg-gradient-cta text-primary-foreground px-8 md:px-10 py-3.5 md:py-4 rounded-full text-sm md:text-base font-bold glow-primary mb-12 md:mb-14"
         >
           Get in Touch
           <ArrowUpRight className="w-4 h-4" />
@@ -69,7 +69,7 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row items-center justify-between text-[10px] md:text-xs text-muted-foreground gap-2">
           <p>© 2026 Flownex Media. All rights reserved.</p>
-          <p className="font-medium">Crafted with precision ✦</p>
+          <p className="font-semibold">Crafted with precision ✦</p>
         </div>
       </div>
     </footer>
