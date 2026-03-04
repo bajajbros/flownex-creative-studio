@@ -20,33 +20,32 @@ const Navbar = () => {
   }, []);
 
   return (
-    <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-6 z-50 glass-nav rounded-full px-2 py-2 transition-shadow duration-300 ${
-        scrolled ? "shadow-lg shadow-background/50" : ""
-      }`}
-      style={{ left: "50%", transform: "translateX(-50%)" }}
-    >
-      <div className="flex items-center gap-1">
-        {navItems.map((item) => (
-          <a
-            key={item.label}
-            href={item.href}
-            onClick={() => setActive(item.label)}
-            className={`relative flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
-              active === item.label
+    <div className="fixed top-6 left-0 right-0 z-50 flex justify-center">
+      <motion.nav
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className={`glass-nav rounded-full px-2 py-2 
+          transition-shadow duration-300 ${scrolled ? "shadow-lg shadow-background/50" : ""}`}
+      >
+        <div className="flex items-center gap-1">
+          {navItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              onClick={() => setActive(item.label)}
+              className={`relative flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${active === item.label
                 ? "bg-secondary text-foreground"
                 : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            <item.icon className="w-4 h-4" />
-            <span>{item.label}</span>
-          </a>
-        ))}
-      </div>
-    </motion.nav>
+                }`}
+            >
+              <item.icon className="w-4 h-4" />
+              <span>{item.label}</span>
+            </a>
+          ))}
+        </div>
+      </motion.nav>
+    </div>
   );
 };
 
