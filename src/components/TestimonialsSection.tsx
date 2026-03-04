@@ -21,10 +21,8 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 md:mb-16"
         >
-          <p className="text-accent text-xs md:text-sm font-semibold uppercase tracking-[0.25em] mb-3">Testimonials</p>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
-            What Clients <span className="italic font-light text-foreground/70">Say</span>
-          </h2>
+          <p className="text-accent text-xs md:text-sm font-bold uppercase tracking-[0.3em] mb-3">Testimonials</p>
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">What Clients Say</h2>
         </motion.div>
       </div>
 
@@ -42,11 +40,11 @@ const TestimonialsSection = () => {
                 <Quote className="w-6 md:w-8 h-6 md:h-8 text-primary/30 mb-3 md:mb-4" />
                 <p className="text-xs md:text-sm text-muted-foreground leading-relaxed mb-4 md:mb-6">{t.text}</p>
                 <div className="flex items-center gap-3 pt-3 md:pt-4 border-t border-border">
-                  <div className="w-9 md:w-10 h-9 md:h-10 rounded-full bg-gradient-cta flex items-center justify-center text-primary-foreground text-xs md:text-sm font-bold">
+                  <div className="w-9 md:w-10 h-9 md:h-10 rounded-full bg-gradient-cta flex items-center justify-center text-primary-foreground text-xs md:text-sm font-black">
                     {t.name[0]}
                   </div>
                   <div>
-                    <p className="font-semibold text-xs md:text-sm">{t.name}</p>
+                    <p className="font-bold text-xs md:text-sm">{t.name}</p>
                     <p className="text-[10px] md:text-xs text-muted-foreground">{t.role}</p>
                   </div>
                 </div>

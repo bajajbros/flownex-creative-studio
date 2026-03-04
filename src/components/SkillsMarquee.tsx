@@ -18,10 +18,8 @@ const SkillsMarquee = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 md:mb-14"
         >
-          <p className="text-primary text-xs md:text-sm font-semibold uppercase tracking-[0.25em] mb-3">Toolkit</p>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
-            Software We <span className="italic font-light text-foreground/70">Master</span>
-          </h2>
+          <p className="text-primary text-xs md:text-sm font-bold uppercase tracking-[0.3em] mb-3">Toolkit</p>
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">Software We Master</h2>
         </motion.div>
       </div>
 
@@ -37,7 +35,7 @@ const SkillsMarquee = () => {
                 className="flex-shrink-0 mx-1.5 md:mx-2 px-4 md:px-6 py-3 md:py-4 rounded-2xl flex items-center gap-2 md:gap-3 glass-card hover:border-glow transition-colors"
               >
                 <div
-                  className="w-7 md:w-9 h-7 md:h-9 rounded-lg flex items-center justify-center text-[10px] md:text-xs font-bold"
+                  className="w-7 md:w-9 h-7 md:h-9 rounded-lg flex items-center justify-center text-[10px] md:text-xs font-black"
                   style={{
                     backgroundColor: `hsl(${colors[i % colors.length]} 50% 40% / 0.2)`,
                     color: `hsl(${colors[i % colors.length]} 60% 55%)`,
@@ -45,7 +43,7 @@ const SkillsMarquee = () => {
                 >
                   {skill.split(" ").map(w => w[0]).join("")}
                 </div>
-                <span className="text-xs md:text-sm font-medium whitespace-nowrap">{skill}</span>
+                <span className="text-xs md:text-sm font-semibold whitespace-nowrap">{skill}</span>
               </div>
             ))}
           </div>

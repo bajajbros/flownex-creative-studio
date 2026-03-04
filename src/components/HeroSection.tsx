@@ -4,7 +4,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-noise px-4">
-      {/* Orbital rings - smaller on mobile */}
+      {/* Orbital rings */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[300px] md:w-[600px] h-[300px] md:h-[600px] rounded-full border border-border/30 animate-spin-slow" />
         <div className="absolute w-[220px] md:w-[450px] h-[220px] md:h-[450px] rounded-full border border-border/20 animate-spin-slow" style={{ animationDirection: "reverse", animationDuration: "30s" }} />
@@ -23,43 +23,33 @@ const HeroSection = () => {
         className="glass-card border-glow rounded-full px-4 md:px-5 py-2 md:py-2.5 mb-8 md:mb-10 flex items-center gap-2.5"
       >
         <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-        <span className="text-xs md:text-sm text-muted-foreground font-medium">Available for projects</span>
+        <span className="text-xs md:text-sm text-muted-foreground font-medium">Hello! We're a Creative Studio!</span>
       </motion.div>
 
-      {/* Main heading — editorial mixed-weight typography */}
+      {/* Main heading — big bold display */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.4 }}
         className="text-center z-10 relative"
       >
-        <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter leading-[0.9]">
-          <span className="text-gradient-brand italic">Flownex</span>
+        <p className="font-heading text-3xl sm:text-4xl md:text-5xl font-medium text-foreground/80 mb-1 md:mb-2">
+          Yo! We're{" "}
+          <span className="text-gradient-brand font-extrabold">Flownex</span>
+        </p>
+        <h1 className="font-heading text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black leading-[1.05] tracking-tight">
+          Professional Video Editing<br className="hidden sm:block" />
+          <span className="block mt-1">& Motion Design</span>
         </h1>
-        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter leading-[0.9] mt-1 md:mt-2">
-          <span className="font-light text-foreground/80">Media</span>
-          <span className="text-primary ml-2 md:ml-3 text-2xl sm:text-3xl md:text-5xl align-super">✦</span>
-        </h1>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.7 }}
-        className="flex items-center gap-3 mt-4 md:mt-6 mb-4 md:mb-6"
-      >
-        <div className="h-px w-8 md:w-12 bg-border" />
-        <span className="text-[10px] md:text-xs text-muted-foreground font-medium tracking-[0.25em] uppercase">Video Editing · Motion · Content</span>
-        <div className="h-px w-8 md:w-12 bg-border" />
       </motion.div>
 
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.9 }}
-        className="text-muted-foreground text-center max-w-sm md:max-w-md mb-10 md:mb-12 text-base md:text-lg leading-relaxed px-2"
+        className="text-muted-foreground text-center max-w-lg mb-10 md:mb-12 text-sm md:text-base leading-relaxed mt-6 md:mt-8 px-2"
       >
-        We craft scroll-stopping videos that grow your audience and turn viewers into fans.
+        We craft scroll-stopping videos that grow your audience and turn viewers into fans — helping creators and brands turn ideas into high-performing content.
       </motion.p>
 
       {/* CTA row */}
@@ -73,7 +63,7 @@ const HeroSection = () => {
           href="#work"
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.97 }}
-          className="bg-gradient-cta text-primary-foreground px-8 py-4 rounded-full text-sm md:text-base font-semibold flex items-center justify-center gap-2 glow-primary w-full sm:w-auto"
+          className="bg-gradient-cta text-primary-foreground px-8 py-4 rounded-full text-sm md:text-base font-bold flex items-center justify-center gap-2 glow-primary w-full sm:w-auto"
         >
           See Our Work
           <ArrowRight className="w-4 h-4" />
@@ -82,7 +72,7 @@ const HeroSection = () => {
           href="#about"
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.97 }}
-          className="glass-card border-glow px-8 py-4 rounded-full text-sm md:text-base font-semibold flex items-center justify-center gap-2 text-foreground w-full sm:w-auto"
+          className="glass-card border-glow px-8 py-4 rounded-full text-sm md:text-base font-bold flex items-center justify-center gap-2 text-foreground w-full sm:w-auto"
         >
           <Sparkles className="w-4 h-4 text-accent" />
           Book a Call
@@ -102,8 +92,8 @@ const HeroSection = () => {
           { num: "2M+", label: "Views Generated" },
         ].map((stat, i) => (
           <div key={i} className="text-center">
-            <p className="text-xl md:text-3xl font-extrabold text-gradient-brand tracking-tight">{stat.num}</p>
-            <p className="text-[10px] md:text-xs text-muted-foreground mt-1">{stat.label}</p>
+            <p className="font-heading text-2xl md:text-4xl font-black text-gradient-brand tracking-tight">{stat.num}</p>
+            <p className="text-[10px] md:text-xs text-muted-foreground mt-1 font-medium">{stat.label}</p>
           </div>
         ))}
       </motion.div>

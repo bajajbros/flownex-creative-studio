@@ -23,10 +23,8 @@ const TrustedClients = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <p className="text-primary text-xs md:text-sm font-semibold uppercase tracking-[0.25em] mb-3">Community</p>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
-            Our Trusted <span className="italic font-light text-foreground/70">Clients</span>
-          </h2>
+          <p className="text-primary text-xs md:text-sm font-bold uppercase tracking-[0.3em] mb-3">Community</p>
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">Our Trusted Clients</h2>
         </motion.div>
       </div>
 
@@ -38,11 +36,11 @@ const TrustedClients = () => {
           <div className="flex animate-marquee-slow" style={{ width: "200%" }}>
             {[...clients, ...clients].map((c, i) => (
               <div key={i} className="flex-shrink-0 mx-1.5 md:mx-2 glass-card rounded-xl px-4 md:px-5 py-3 flex items-center gap-3 min-w-[180px] md:min-w-[220px] hover:border-glow transition-colors">
-                <div className="w-8 md:w-10 h-8 md:h-10 rounded-full bg-secondary flex items-center justify-center text-[10px] md:text-xs font-bold text-muted-foreground flex-shrink-0">
+                <div className="w-8 md:w-10 h-8 md:h-10 rounded-full bg-secondary flex items-center justify-center text-[10px] md:text-xs font-black text-muted-foreground flex-shrink-0">
                   {c.name.split(" ").map(w => w[0]).join("").slice(0, 2)}
                 </div>
                 <div className="min-w-0">
-                  <p className="font-semibold text-xs md:text-sm truncate">{c.name}</p>
+                  <p className="font-bold text-xs md:text-sm truncate">{c.name}</p>
                   <p className="text-[10px] md:text-xs text-muted-foreground truncate">{c.handle}</p>
                 </div>
               </div>
@@ -54,11 +52,11 @@ const TrustedClients = () => {
           <div className="flex animate-marquee-reverse" style={{ width: "200%" }}>
             {[...clients.slice(5), ...clients.slice(0, 5), ...clients.slice(5), ...clients.slice(0, 5)].map((c, i) => (
               <div key={i} className="flex-shrink-0 mx-1.5 md:mx-2 glass-card rounded-xl px-4 md:px-5 py-3 flex items-center gap-3 min-w-[180px] md:min-w-[220px] hover:border-glow transition-colors">
-                <div className="w-8 md:w-10 h-8 md:h-10 rounded-full bg-secondary flex items-center justify-center text-[10px] md:text-xs font-bold text-muted-foreground flex-shrink-0">
+                <div className="w-8 md:w-10 h-8 md:h-10 rounded-full bg-secondary flex items-center justify-center text-[10px] md:text-xs font-black text-muted-foreground flex-shrink-0">
                   {c.name.split(" ").map(w => w[0]).join("").slice(0, 2)}
                 </div>
                 <div className="min-w-0">
-                  <p className="font-semibold text-xs md:text-sm truncate">{c.name}</p>
+                  <p className="font-bold text-xs md:text-sm truncate">{c.name}</p>
                   <p className="text-[10px] md:text-xs text-muted-foreground truncate">{c.handle}</p>
                 </div>
               </div>

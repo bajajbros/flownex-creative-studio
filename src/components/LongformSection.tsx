@@ -19,10 +19,8 @@ const LongformSection = () => {
           transition={{ duration: 0.6 }}
           className="mb-10 md:mb-14"
         >
-          <p className="text-accent text-xs md:text-sm font-semibold uppercase tracking-[0.25em] mb-3">Long Form</p>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
-            Deep <span className="italic font-light text-foreground/70">Dives</span>
-          </h2>
+          <p className="text-accent text-xs md:text-sm font-bold uppercase tracking-[0.3em] mb-3">Long Form</p>
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">Deep Dives</h2>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
@@ -48,7 +46,7 @@ const LongformSection = () => {
                 </div>
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5 bg-gradient-to-t from-background/90 to-transparent flex items-end justify-between">
-                <p className="text-xs md:text-sm font-bold">{video.title}</p>
+                <p className="text-sm font-bold tracking-tight">{video.title}</p>
                 <span className="text-[10px] md:text-xs text-muted-foreground font-mono">{video.duration}</span>
               </div>
             </motion.div>
