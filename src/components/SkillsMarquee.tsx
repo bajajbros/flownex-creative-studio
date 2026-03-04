@@ -9,33 +9,35 @@ const colors = ["165", "200", "35", "280", "150", "340", "60", "220", "100"];
 
 const SkillsMarquee = () => {
   return (
-    <section className="py-28 px-6 overflow-hidden bg-noise">
+    <section className="py-20 md:py-28 px-4 md:px-6 overflow-hidden bg-noise">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          className="text-center mb-10 md:mb-14"
         >
-          <p className="text-primary text-sm font-semibold uppercase tracking-widest mb-3">Toolkit</p>
-          <h2 className="text-4xl md:text-5xl font-extrabold">Software We Master</h2>
+          <p className="text-primary text-xs md:text-sm font-semibold uppercase tracking-[0.25em] mb-3">Toolkit</p>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
+            Software We <span className="italic font-light text-foreground/70">Master</span>
+          </h2>
         </motion.div>
       </div>
 
       <div className="relative">
-        <div className="absolute left-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-r from-background to-transparent" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-l from-background to-transparent" />
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 z-10 bg-gradient-to-r from-background to-transparent" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 z-10 bg-gradient-to-l from-background to-transparent" />
 
         <div className="w-full overflow-hidden">
           <div className="flex animate-marquee-slow" style={{ width: "200%" }}>
             {[...skills, ...skills, ...skills, ...skills].map((skill, i) => (
               <div
                 key={i}
-                className="flex-shrink-0 mx-2 px-6 py-4 rounded-2xl flex items-center gap-3 glass-card hover:border-glow transition-colors"
+                className="flex-shrink-0 mx-1.5 md:mx-2 px-4 md:px-6 py-3 md:py-4 rounded-2xl flex items-center gap-2 md:gap-3 glass-card hover:border-glow transition-colors"
               >
                 <div
-                  className="w-9 h-9 rounded-lg flex items-center justify-center text-xs font-bold"
+                  className="w-7 md:w-9 h-7 md:h-9 rounded-lg flex items-center justify-center text-[10px] md:text-xs font-bold"
                   style={{
                     backgroundColor: `hsl(${colors[i % colors.length]} 50% 40% / 0.2)`,
                     color: `hsl(${colors[i % colors.length]} 60% 55%)`,
@@ -43,7 +45,7 @@ const SkillsMarquee = () => {
                 >
                   {skill.split(" ").map(w => w[0]).join("")}
                 </div>
-                <span className="text-sm font-medium whitespace-nowrap">{skill}</span>
+                <span className="text-xs md:text-sm font-medium whitespace-nowrap">{skill}</span>
               </div>
             ))}
           </div>
